@@ -1,20 +1,33 @@
-import { Component } from 'react'
+import { onAuthStateChanged, signOut  } from "firebase/auth";
+import {auth} from '../../firebase'
+import router from 'next/router'
+import {useState} from 'react'
+import { Button } from 'semantic-ui-react'
 
-interface Props {
-    
-}
-interface State {
-    
-}
+export default function Home() {
+    const [userid, setUserId] = useState("")
 
-export default class home extends Component<Props, State> {
-    state = {}
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            setUserId(user.uid)
+            console.log(userid)
+        } else {
+            router.push("/")
+        }
+      });
 
-    render() {
-        return (
-            <div>
-                <h1>Home</h1>
-            </div>
-        )
-    }
+      const logOut = () =>{
+        signOut(auth).then(() => {
+            router.push("/")
+          }).catch((error) => {
+            console.log(error)
+          });
+      }
+
+    return (
+        <div style={{display: "flex", justifyContent: "space-around", alignContent:"center", padding:"5px"}}>
+            <h1>ZallpyChat</h1>
+            <Button color={'red'} onClick={logOut}>Sair</Button>
+        </div>
+    )
 }

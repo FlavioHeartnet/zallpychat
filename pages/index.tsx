@@ -1,8 +1,38 @@
 import Head from 'next/head'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 import styles from '../styles/Home.module.css'
+import { signInWithEmailAndPassword  } from "firebase/auth";
+import {auth} from '../firebase'
+import {useState} from 'react'
+import router from 'next/router'
+import CustomModal from '../components/modal'
 
 export default function Login() {
+  
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [modal, setModal] = useState(<div/>);
+  const [isLoading, setLoading] = useState(false)
+  const login = () =>{
+    setLoading(true)
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      router.push("/views/home")
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+      const response = {
+        titulo: 'Falha ao logar',
+        texto: 'Não foi possivel logar devido ao erro: ' + errorMessage,
+        dispatch: true
+      };
+      setModal(<div/>)
+      setModal(<CustomModal {...response} />)
+      setLoading(false)
+    });
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,24 +43,25 @@ export default function Login() {
 
       <main>
         <h1 className={styles.title}>
-          ZallpyChat <a href="https://nextjs.org">Realtime!</a>
+          ZallpyChat <a href="#">Realtime!</a>
         </h1>
 
         <p className={styles.description}>
           Acesse o sistema por aqui:
         </p>
-        <Form>
+        <Form onSubmit={login}>
           <Form.Field>
             <label>Email</label>
-            <input placeholder='digite seu E-mail' />
+            <input onChange={e => setEmail(e.target.value)} placeholder='digite seu E-mail' type={"email"} />
           </Form.Field>
           <Form.Field>
             <label>Senha</label>
-            <input placeholder='digite sua senha' />
+            <input onChange={e => setPassword(e.target.value)} placeholder='digite sua senha' type={"password"} />
           </Form.Field>
-          <Button primary className={styles.buttonPrimary} type='submit'>Entrar</Button>
-        </Form>        
+          <Button loading={isLoading}  primary className={styles.buttonPrimary} type={'submit'}>Entrar</Button>
+        </Form> 
         </main>
+         {modal}
     </div>
   )
 }
