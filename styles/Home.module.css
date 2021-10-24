@@ -1,89 +1,47 @@
-.container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+.maincontainer{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
 }
 
-.buttonPrimary{
-  background-color:#0070f3 !important
+.usercolumn {
+    flex-grow: 2;
+    
+}
+.chatcolumn {
+    flex-grow: 4;
+    background-color: #e5ddd5;
 }
 
-
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.userinfo{
+    background-color: #e6e6e6;
+    padding: 1em;
+    justify-content: space-between;
+    align-content: center;
+    display: flex;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+.searchbar{
+    background-color: #f0f0f0;
+    padding: 1em;
 }
 
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+.chats{
+    padding: 1em;
+
 }
 
-.title,
-.description {
-  text-align: center;
+.profImage{
+    border-radius: 50%;
 }
 
-.description {
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-  margin-top: 3rem;
-}
-
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  width: 45%;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+.addRoomButton {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border-width: 0;
+    background-color: #b3b3b3;
+    cursor: pointer;
+    color: white;
+    box-shadow: 2px 3px 5px 0.5px dimgrey;
 }

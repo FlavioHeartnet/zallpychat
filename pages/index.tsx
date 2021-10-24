@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Button, Form } from 'semantic-ui-react'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Login.module.css'
 import { signInWithEmailAndPassword  } from "firebase/auth";
 import {auth} from '../firebase'
 import {useState} from 'react'
@@ -52,11 +52,11 @@ export default function Login() {
         <Form onSubmit={login}>
           <Form.Field>
             <label>Email</label>
-            <input onChange={e => setEmail(e.target.value)} placeholder='digite seu E-mail' type={"email"} />
+            <input onChange={e => setEmail(e.target.value)} placeholder='Digite seu e-mail' type={"email"} />
           </Form.Field>
           <Form.Field>
             <label>Senha</label>
-            <input onChange={e => setPassword(e.target.value)} placeholder='digite sua senha' type={"password"} />
+            <input onChange={e => setPassword(e.target.value)} placeholder='Digite sua senha' type={"password"} />
           </Form.Field>
           <Button loading={isLoading}  primary className={styles.buttonPrimary} type={'submit'}>Entrar</Button>
         </Form> 
