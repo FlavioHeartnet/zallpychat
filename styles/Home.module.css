@@ -5,12 +5,15 @@
 }
 
 .usercolumn {
-    flex-grow: 2;
+    flex-grow: 1;
     
 }
 .chatcolumn {
     flex-grow: 4;
     background-color: #e5ddd5;
+    background-image: url('./../public/img/background.jpg');
+    background-blend-mode: multiply;
+    background-size: contain;
 }
 
 .userinfo{
@@ -24,11 +27,45 @@
 .searchbar{
     background-color: #f0f0f0;
     padding: 1em;
+    display: flex;
+    
 }
-
+.searchbarinput{
+    flex-grow: 1;
+    
+}
 .chats{
     padding: 1em;
-
+}
+.chats:hover{
+    cursor: pointer;
+    background-color: #e6e6e6;
+}
+.badge{
+    background-color: #07bc4c;
+    display: flex;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: white;
+}
+.chatItem{
+    display: flex;
+    flex-direction: row;
+}
+.chatitemprofile{
+    border-radius: 50%;
+}
+.itemimage{
+    margin-top: 8px;
+}
+.itemtittle{
+   padding-left: 1em;
+   flex-grow: 2;
+}
+.itemsubtittle{
+    justify-content: right;
 }
 
 .profImage{
@@ -36,11 +73,10 @@
 }
 
 .addRoomButton {
-    border-radius: 50%;
     width: 50px;
     height: 50px;
     border-width: 0;
-    background-color: #b3b3b3;
+    background-color: transparent;
     cursor: pointer;
     color: white;
     box-shadow: 2px 3px 5px 0.5px dimgrey;
