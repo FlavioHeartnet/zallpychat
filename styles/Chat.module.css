@@ -1,0 +1,40 @@
+.dialogbox{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    align-items: stretch;
+    height: 100%;
+}
+
+.sendbuttonbox{
+   padding: 6px;
+}
+
+.sendbutton{
+    border: 0;
+}
+
+.messageboxsender{
+    background-color: #f0f0f0;
+    height: 62px;
+    margin-top: auto;
+    align-content: center;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+.messageboxsender .inputbox {
+   width: 100%;
+}
+
+.messageboxsender div input{
+    border-radius: 1.285714rem !important;
+    
+}
+
+.dialogs{
+
+}
+
