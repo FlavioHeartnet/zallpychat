@@ -1,5 +1,5 @@
 import { Input } from 'semantic-ui-react'
-import styles from './../styles/Home.module.css'
+import styles from './../styles/Home.module.scss'
 
 export default function SearchBar(){
     return (

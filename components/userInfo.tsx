@@ -1,4 +1,4 @@
-import styles from './../styles/Home.module.css'
+import styles from './../styles/Home.module.scss'
 import Image from 'next/image'
 import profPic from '../public/img/profile.jpg'
 import {Icon} from 'semantic-ui-react'

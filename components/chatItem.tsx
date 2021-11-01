@@ -1,4 +1,4 @@
-import styles from './../styles/Home.module.css'
+import styles from './../styles/Home.module.scss'
 import Image from 'next/image'
 import profilepic from './../public/img/profileUser.png'
 
@@ -18,7 +18,7 @@ export default function ChatItem(props){
                 </div>
                 <div className={styles.itemsubtittle}>
                     <p className={styles.messagetime}>{messagetime}</p>
-                    <p className={styles.badge}>4</p>
+                    {props.unread != undefined && <p className={styles.badge}>{props.unread}</p>}
                 </div>
             </div>
         </div>

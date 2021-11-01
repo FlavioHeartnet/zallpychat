@@ -1,3 +1,5 @@
+@use 'base.scss';
+
 .maincontainer{
     display: flex;
     flex-direction: row;
@@ -10,7 +12,7 @@
 }
 .chatcolumn {
     flex-grow: 4;
-    background-color: #e5ddd5;
+    background-color: base.$light-bege;
     background-image: url('./../public/img/background.jpg');
     background-blend-mode: multiply;
     background-size: contain;
@@ -18,7 +20,7 @@
 }
 
 .userinfo{
-    background-color: #e6e6e6;
+    background-color: base.$light-gray;
     padding: 1em;
     justify-content: space-between;
     align-content: center;
@@ -26,13 +28,17 @@
 }
 
 .searchbar{
-    background-color: #f0f0f0;
+    background-color: base.$thin-gray;
     padding: 1em;
     display: flex;
     
 }
 .searchbarinput{
     flex-grow: 1;
+    input {
+        border-radius: 1.285714rem !important;
+        height: 35px;
+    }
     
 }
 .chats{
@@ -40,16 +46,16 @@
 }
 .chats:hover{
     cursor: pointer;
-    background-color: #e6e6e6;
+    background-color: base.$light-gray;
 }
 .badge{
-    background-color: #07bc4c;
+    background-color: base.$green;
     display: flex;
     justify-content: center;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    color: white;
+    color: base.$white;
 }
 .chatItem{
     display: flex;

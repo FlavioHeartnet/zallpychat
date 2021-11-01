@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Button, Form } from 'semantic-ui-react'
-import styles from '../styles/Login.module.css'
+import styles from '../styles/Login.module.scss'
 import { signInWithEmailAndPassword  } from "firebase/auth";
 import {auth} from '../firebase'
 import {useState} from 'react'

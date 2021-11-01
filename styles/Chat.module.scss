@@ -1,0 +1,101 @@
+@use 'base.scss';
+
+.dialogbox{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    align-items: stretch;
+    height: 100%;
+}
+
+
+.messageboxsender {
+    background-color: base.$thin-gray;
+    height: 62px;
+    align-content: center;
+    padding: 0.7em;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    
+    .sendbuttonbox{
+        padding: 8px;
+        }
+        
+        .sendbutton{
+            border: 0;
+        }
+    div input{
+        border-radius: 1.285714rem !important;
+        height: 42px;
+        
+    }
+
+    .inputbox {
+        width: 100%;
+     }
+}
+    
+
+.dialogs{
+    margin-top: auto; 
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 1em;
+
+    div {
+        max-width: 65%;
+		word-wrap: break-word;
+		margin-bottom: 12px;
+        
+
+
+    }
+   .ballonsender{
+        background-color: base.$thin-green;
+        position:relative;
+        padding:10px 20px;
+        border-radius:25px;
+        margin-left: auto;
+        
+    }
+
+    .ballonreply{
+        background-color: base.$white;
+        position:relative;
+        padding:10px 20px;
+        border-radius:25px;
+        color: black;
+        float: left;
+        margin-right: auto;
+
+        .groupballoontittle{
+            color: base.$light-green;
+            margin-bottom: 0em;
+        }
+    }
+}
+
+.chatheader{
+    background-color: base.$thin-gray;
+    padding: 0.9em;
+    display: flex;
+    flex-flow: row wrap;
+
+    img{
+        border-radius: 50%;
+    }
+
+    .headerinfo{
+        margin-left: 1em;
+    }
+
+    span {
+        font-weight: bold;
+        font-size: large;
+    }
+    p{
+        opacity: 0.6;
+    }
+}
+

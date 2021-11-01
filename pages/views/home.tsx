@@ -3,7 +3,7 @@ import {auth} from '../../firebase'
 import router from 'next/router'
 import {useState} from 'react'
 import { Button } from 'semantic-ui-react'
-import styles from '../../styles/Home.module.css'
+import styles from '../../styles/Home.module.scss'
 import Chat from '../../components/chat'
 import User from '../../components/homeUser'
 
