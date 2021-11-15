@@ -8,7 +8,6 @@ import router from 'next/router'
 import CustomModal from '../components/modal'
 
 export default function Login() {
-  
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [modal, setModal] = useState(<div/>);
@@ -58,8 +57,12 @@ export default function Login() {
             <label>Senha</label>
             <input onChange={e => setPassword(e.target.value)} placeholder='Digite sua senha' type={"password"} />
           </Form.Field>
-          <Button loading={isLoading}  primary className={styles.buttonPrimary} type={'submit'}>Entrar</Button>
+          <div className={styles.buttons}>
+            <Button loading={isLoading} primary className={styles.buttonPrimary} type={'submit'}>Entrar</Button>
+            <Button type={'button'} onClick={() => router.push('/views/signup')}>Não tem cadastro? cadastre aqui!</Button>
+          </div>
         </Form> 
+        
         </main>
          {modal}
     </div>
