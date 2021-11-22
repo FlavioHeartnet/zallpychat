@@ -42,7 +42,7 @@ const ChatListItens = [
     {
         id: '6',
         name: 'Sala 6',
-        timestamp: '1635125854',
+        timestamp: '1637271981',
         description: 'lorem iptsum',
         photo: '/../public/img/profileUser.png'
     },
